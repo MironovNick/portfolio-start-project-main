@@ -1,28 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 import {SectionTitle} from "../../../components/SectionTitle";
-import {Menu} from "../../../components/menu/Menu";
+import {TabMenu} from "./tabMenu/TabMenu";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Work} from "./work/Work";
 import socialnetwork from "./../../../assets/images/socialnetwork.webp";
 import timer from "./../../../assets/images/timer.webp";
+import {Container} from "../../../components/Container";
 
 const worksItems = ["all", "landing page", "react", "spa"];
 
 export const Works = () => {
     return (
         <StyledWorks>
-            <SectionTitle>My Works</SectionTitle>
-            <Menu menuItems={worksItems}/>
-            <FlexWrapper justify={"space-around"}>
-                <Work src={socialnetwork} title={"Social Network"} text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."}></Work>
-                <Work src={timer} title={"Timer"} text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim"}></Work>
-            </FlexWrapper>
+            <Container>
+                <SectionTitle>My Works</SectionTitle>
+                <TabMenu menuItems={worksItems}/>
+                <FlexWrapper justify={"space-between"} align={"flex-start"}>
+                    <Work src={socialnetwork} title={"Social Network"}
+                          text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."}></Work>
+                    <Work src={timer} title={"Timer"}
+                          text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim"}></Work>
+                </FlexWrapper>
+            </Container>
         </StyledWorks>
     );
 };
 
 const StyledWorks = styled.section`
-    min-height: 100vh;
-    background-color: #77fff0;
 `

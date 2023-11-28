@@ -47,6 +47,10 @@ const Name = styled.span`
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 3px;
+  
+  @media ${theme.media.mobile} {
+    font-size: 16px;
+  }
 `
 
 const SocialList = styled.ul`

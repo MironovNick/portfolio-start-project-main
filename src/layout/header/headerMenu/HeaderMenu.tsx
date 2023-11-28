@@ -34,6 +34,10 @@ const StyledHeaderMenu = styled.nav`
     gap: 30px;
     justify-content: center;
   }
+
+  @media ${theme.media.tablet} {
+    display: none;
+  }
 `
 
 const Link = styled.a`
@@ -65,7 +69,7 @@ const Mask = styled.span`
 
 const ListItem = styled.li`
   position: relative;
-  
+
   &::before {
     content: "";
     display: inline-block;
@@ -83,9 +87,10 @@ const ListItem = styled.li`
     &::before {
       transform: scale(1);
     }
-    
+
     ${Mask} {
       transform: skewX(12deg) translateX(5px);
+
       & + ${Mask} {
         transform: skewX(12deg) translateX(-5px);
       }

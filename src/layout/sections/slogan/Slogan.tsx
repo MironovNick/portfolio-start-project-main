@@ -11,7 +11,7 @@ export const Slogan = () => {
             <Container>
                 <FlexWrapper direction={"column"} align={"center"}>
                     <SectionTitle>No Fate</SectionTitle>
-                    <StyledButton type={"submit"}>You fired</StyledButton>
+                    <StyledButton type={"submit"}>You hired</StyledButton>
                 </FlexWrapper>
             </Container>
         </StyledSlogan>

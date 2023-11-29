@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
 import photo from '../../../assets/images/avatar.jpg';
-import { Container } from '../../../components/Container';
+import {Container} from '../../../components/Container';
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {theme} from "../../../styles/Theme";
 import {font} from "../../../styles/Common";
+import Typewriter from 'typewriter-effect';
 
 export const Main = () => {
     return (
@@ -14,7 +15,17 @@ export const Main = () => {
                     <div>
                         <SmallText>Hi there!</SmallText>
                         <Name><span>Mironov Nik</span></Name>
-                        <MainTitle>Front-end developer</MainTitle>
+                        <MainTitle>
+                            <p>Front-end developer</p>
+                            <Typewriter
+                                options={{
+                                    strings: ['Front-end developer'],
+                                    autoStart: true,
+                                    loop: true,
+                                    delay: 20,
+                                }}
+                            />
+                        </MainTitle>
                     </div>
                     <PhotoWrapper>
                         <Photo src={photo} alt=""/>
@@ -50,15 +61,15 @@ const Photo = styled.img`
 const PhotoWrapper = styled.div`
   position: relative;
   z-index: 0;
- 
-  
-  &::before{
+
+
+  &::before {
     content: "";
     width: 295px;
     height: 340px;
     border: 8px solid ${theme.colors.accent};
     position: absolute;
-    
+
     z-index: -1;
     top: -19px;
     left: 24px;
@@ -74,37 +85,38 @@ const PhotoWrapper = styled.div`
     }
   }
 
-  @media ${theme.media.tablet}{
+  @media ${theme.media.tablet} {
     margin: 65px 0 20px 0;
   }
 `
 
 const MainTitle = styled.h1`
- /* font-size: 20px;
-  font-weight: 400;
-  line-height: 20px;*/
+  /* font-size: 20px;
+   font-weight: 400;
+   line-height: 20px;*/
   margin-left: 2px;
   color: ${theme.colors.accent};
   ${font({color: '#FF5D3C', weight: 400, Fmax: 22, Fmin: 16})}
+
+  p{
+    display: none;
+  }
 `
 
 const Name = styled.h2`
-  ${font({family: "'Josefin Sans', sans-serif", weight: 700, Fmax: 40, Fmin: 26})}
-  /*font-family: 'Josefin Sans', sans-serif;
+  ${font({family: "'Josefin Sans', sans-serif", weight: 700, Fmax: 40, Fmin: 26})} /*font-family: 'Josefin Sans', sans-serif;
   font-size: 40px;
-  font-weight: 700;*/
-  line-height: 55px;
+  font-weight: 700;*/ line-height: 55px;
   letter-spacing: 0.05em;
   text-align: left;
-  margin: 10px 0;
-;
+  margin: 10px 0;;
 
   span {
-    
+
     position: relative;
     z-index: 0;
-    
-    &::before{
+
+    &::before {
       content: "";
       display: inline-block;
       width: 100%;
@@ -115,8 +127,8 @@ const Name = styled.h2`
       z-index: -1;
     }
   }
-  
-  /*@media ${theme.media.mobile} {
+
+    /*@media ${theme.media.mobile} {
     margin: 0 0 20px 0;
   }*/
 

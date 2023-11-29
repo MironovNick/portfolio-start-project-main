@@ -1,16 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme";
 
 export const MobileMenu = (props: { menuItems: Array<string> }) => {
+
+    const [menuIsOpen, setmenuIsOpen] = useState(false)
+
+    const onBurgerBtnClick = () => {setmenuIsOpen (!menuIsOpen)}
+
     return (
         <StyledMobileMenu>
 
-            <BurgerButton isOpen={false}>
+            <BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>
                 <span></span>
             </BurgerButton>
 
-            <MobileMenuPopup isOpen={false}>
+            <MobileMenuPopup isOpen={menuIsOpen} onClick={onBurgerBtnClick}>
                 <ul>
                     {props.menuItems.map((item: string, index) => {
                             return (
@@ -88,7 +93,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     bottom: 50px;
 
     ${props => props.isOpen && css<{ isOpen: boolean }>`
-      background-color: rgba(255, 255, 255, 0)
+        background-color: rgba(255, 255, 255, 0);
     `}
     
     &::before {
@@ -101,8 +106,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       transform: translateY(-10px);
 
       ${props => props.isOpen && css<{ isOpen: boolean }>`
-        transform: rotate(-45deg) translateY(0px);
-        width: 36px;
+        transform: rotate(-45deg) translateY(0);      
       `}
     }
 
@@ -116,10 +120,11 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       transform: translateY(10px);
 
       ${props => props.isOpen && css<{ isOpen: boolean }>`
-        transform: rotate(45deg) translateY(0px);
+        transform: rotate(45deg) translateY(0);
         width: 36px;
       `}
     }
+    
   }
 `
 

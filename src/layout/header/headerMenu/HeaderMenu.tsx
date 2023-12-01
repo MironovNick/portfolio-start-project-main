@@ -56,6 +56,7 @@ const Mask = styled.span`
   height: 50%;
   overflow-y: hidden;
   color: ${theme.colors.font};
+  transition: .2s ease-in-out;
 
   & + & {
     top: 50%;
@@ -81,6 +82,7 @@ const ListItem = styled.li`
     right: -10px;
     z-index: 1;
     transform: scale(0);
+    transition: .2s ease-in-out;
   }
 
   &:hover {

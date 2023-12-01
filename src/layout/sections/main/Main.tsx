@@ -6,6 +6,8 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 import {theme} from "../../../styles/Theme";
 import {font} from "../../../styles/Common";
 import Typewriter from 'typewriter-effect';
+import Tilt from 'react-parallax-tilt';
+
 
 export const Main = () => {
     return (
@@ -27,9 +29,11 @@ export const Main = () => {
                             />
                         </MainTitle>
                     </div>
-                    <PhotoWrapper>
-                        <Photo src={photo} alt=""/>
-                    </PhotoWrapper>
+                    <Tilt>
+                        <PhotoWrapper>
+                            <Photo src={photo} alt=""/>
+                        </PhotoWrapper>
+                    </Tilt>
                 </FlexWrapper>
             </Container>
         </StyledMain>
@@ -96,9 +100,9 @@ const MainTitle = styled.h1`
    line-height: 20px;*/
   margin-left: 2px;
   color: ${theme.colors.accent};
-  ${font({color: '#FF5D3C', weight: 400, Fmax: 22, Fmin: 16})}
 
-  p{
+  ${font({color: '#FF5D3C', weight: 400, Fmax: 22, Fmin: 16})}
+  p {
     display: none;
   }
 `

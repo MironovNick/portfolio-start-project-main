@@ -6,10 +6,12 @@ import {Slider} from "../../../components/slider/Slider";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {IconWrapper} from "../skills/skill/Skill";
 import {Container} from "../../../components/Container";
+import { Fade } from "react-awesome-reveal";
 
 export const Testimony = () => {
     return (
         <StyledTestimony>
+            <Fade>
             <Container>
                 <SectionTitle>Testimony</SectionTitle>
                 <FlexWrapper direction={"column"} align={"center"}>
@@ -19,6 +21,7 @@ export const Testimony = () => {
                     <Slider/>
                 </FlexWrapper>
             </Container>
+            </Fade>
         </StyledTestimony>
     );
 };

@@ -71,7 +71,7 @@ const SocialLink = styled.a`
   justify-content: center;
   align-items: center;
   color: ${theme.colors.accent};
- 
+  transition: .3s ease-in-out;
   
   &:hover{
     color: ${theme.colors.primaryBg};

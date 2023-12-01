@@ -20,12 +20,13 @@ export const Link = styled.a`
   &::before{
     content: "";
     display: inline-block;
-    
+    height: 0;
     position: absolute;
     bottom: 3px;
     left: 0;
     right: 0;
     background-color: ${theme.colors.accent};
     z-index: -1;
+    transition: .2s ease-in-out;
   }
 `
